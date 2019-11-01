@@ -1,14 +1,26 @@
 .image_cover {
   background-position: 50% 55%;
   background-size: cover;
+  z-index: -1;
 }
-.image1{
-  background-image: url('../../assets/images/7zef0vn6.bmp');
+.image1 {
+  background-image: url('../../assets/images/carousel1.jpg');
   width: 100%;
-  height: auto;
+  height: 100vh;
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5);
 }
-.image2{
-  background-image: url('../../assets/images/68fbrqo6.bmp');
+.image_cover {
+  min-height: 300px;
+}
+.image2 {
+  box-shadow: inset 0 0 0 100vw rgba(0,0,0,0.5);
+  background-image: url('../../assets/images/carousel2.jpg');
   width: 100%;
-  height: auto;
+  height: 100vh;
+}
+.button_carrousel{
+  color: white;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 2em;
 }
