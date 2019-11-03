@@ -22,35 +22,34 @@ body {
   background-color: #fff;
   background-clip: border-box;
   box-shadow: 0 0rem 1rem rgba(71, 53, 26, 0.25);
-  border-radius: .4rem;
+  border-radius: 15px;
   margin: 10px;
   border: none;
 
   img {
     height: 250px;
     max-width: 100%;
-    border-top-left-radius: calc(.25rem - 1px);
-    border-top-right-radius: calc(.25rem - 1px);
+    border-radius: 15px 15px 0 0;
   }
 
   & > .card-body {
     padding: 16px;
 
     & > .card-title {
-      font-family: Raleway;
       font-weight: bolder;
       font-size: 1.2rem;
     }
 
     & > p {
       text-align: justify;
-      font-family: open sans;
       font-size: .95rem;
 
     }
   }
 }
 .cards{
-  background-color: #d0bc9b;
+  background-color: #dec3af;
  }
-
+.prestations{
+  position: absolute;
+}
