@@ -1,7 +1,8 @@
-import {Component, OnInit, HostListener} from '@angular/core';
+import {Component, OnInit, HostListener, Input, Output, EventEmitter} from '@angular/core';
 import AOS from 'aos';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
+import {ContactService} from '../services/contact.service';
+import {Contact} from '../models/contact';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,9 +11,10 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ContactFormComponent implements OnInit {
 
-
   contactForm: FormGroup;
   disabledSubmitButton = true;
+  @Input() initContact = new Contact();
+  @Output() submitedForm: EventEmitter<Contact> = new EventEmitter();
 
   @HostListener('input') oninput() {
 
@@ -21,41 +23,28 @@ export class ContactFormComponent implements OnInit {
     }
   }
 
-  constructor(private fb: FormBuilder, private httpClient: HttpClient) {
-
-    this.contactForm = fb.group({
-      contactFormName: ['', Validators.required],
-      contactFormAdresse: ['', Validators.required],
-      contactFormPhone: ['', Validators.required],
-      contactFormEmail: ['', Validators.compose([Validators.required, Validators.email])],
-      contactFormMessage: ['', Validators.required],
-    });
+  constructor(private fb: FormBuilder, private contactService: ContactService) {
   }
 
-  onSubmit() {
-    this.saveEmailsToServer();
-
-    console.log(this.contactForm);
+  register() {
+    this.submitedForm.emit(this.contactForm.value);
+    this.contactForm.reset();
   }
-
 
   ngOnInit() {
     AOS.init({
       duration: 2000,
       delay: 1200,
     });
+    this.createForm();
   }
-
-  saveEmailsToServer() {
-    this.httpClient
-      .post('https://frontiere-elagage.firebaseio.com/', this.contactForm.value)
-      .subscribe(
-        () => {
-          console.log('Email envoyé !');
-        },
-        (error) => {
-          console.log('Erreur ! : ' + error);
-        }
-      );
+  createForm() {
+    this.contactForm = this.fb.group({
+      contactFormName: [this.initContact.nom, Validators.required],
+      contactFormAdresse: [this.initContact.adresse, Validators.required],
+      contactFormPhone: [this.initContact.phone, Validators.required],
+      contactFormEmail: [this.initContact.email, Validators.compose([Validators.required, Validators.email])],
+      contactFormMessage: [this.initContact.message, Validators.required],
+    });
   }
 }

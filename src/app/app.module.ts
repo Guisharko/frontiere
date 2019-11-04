@@ -11,6 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AddContactComponent } from './add-contact/add-contact/add-contact.component';
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment.prod';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     CardComponent,
     ContactFormComponent,
     FooterComponent,
+    AddContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +33,9 @@ import {HttpClientModule} from '@angular/common/http';
     NgbModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
