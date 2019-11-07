@@ -16,8 +16,6 @@ export class ContactService {
   constructor(
     private afs: AngularFirestore
   ) {
-
-
     this.itemsCollection = this.afs.collection<Contact>('contactMessage');
 
     this.collection = this.itemsCollection.valueChanges().pipe(
@@ -31,7 +29,9 @@ export class ContactService {
 
   public add(item: Contact): Promise<any> {
     const id = this.afs.createId();
-    const contact = {id, ...item};
+    const date = new Date();
+    const contact = {id, date, ...item};
+    console.log(contact);
     return this.itemsCollection.doc(id).set(contact)
       .catch((e) => {
         console.log(e);

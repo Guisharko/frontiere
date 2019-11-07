@@ -1,3 +1,57 @@
-<app-contact-form (submitedForm)="addContact($event)">
+<div id="contact" class="content d-flex h-100 align-items-center justify-content-center bg-contact">
 
-</app-contact-form>
+  <div class="row ">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-4 col-sm-10 offset-sm-1 bg-form">
+      <h3 class="contact-text text-center" data-aos="zoom-out-down" data-aos-delay="100">
+        <span class="green">DEVIS GRATUIT</span><br>dolor sit amet, consectetur adipiscing elit.
+      </h3>
+      <form [formGroup]="contactForm" (ngSubmit)="register()">
+        <div data-aos="fade-left" data-aos-delay="100">
+          <label for="nom" class="form-required">Nom</label>
+          <input class="required form-control" type="text" id="nom" required="required" aria-required="true"
+                 formControlName="contactFormName" >
+        </div>
+
+
+        <div data-aos="fade-right" data-aos-delay="300">
+          <label for="adresse">Adresse</label>
+          <input class="form-control" type="text" id="adresse" formControlName="contactFormAdresse" >
+        </div>
+
+
+        <div data-aos="fade-left" data-aos-delay="500">
+          <label for="email">Email</label>
+          <input class="form-control" type="text" id="email" formControlName="contactFormEmail" >
+        </div>
+
+
+        <div data-aos="fade-right" data-aos-delay="700">
+          <label for="telephone" class="form-required">Téléphone</label>
+          <input class="required form-control" type="text" id="telephone" required="required" aria-required="true"
+                 formControlName="contactFormPhone" >
+        </div>
+
+
+        <div data-aos="fade-left" data-aos-delay="900">
+          <label for="message" class="form-required">Message</label>
+          <textarea class="required form-control" id="message" required="required" aria-required="true"
+                    formControlName="contactFormMessage" ></textarea>
+        </div>
+
+
+        <input type="submit" value="Envoyer le message" class="btn button_form btn-lg mt-5 w-100" data-aos="zoom-out-up"
+               data-aos-delay="1200" [disabled]="disabledSubmitButton">
+      </form>
+    </div>
+
+    <div class="col-md-4 offset-md-1 offset-lg-1 col-sm-10 d-flex align-items-center text-center"
+         data-aos="zoom-out-down" data-aos-delay="1200">
+      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugviat magna sed ultricies bibendum.
+        Nunc porta sed dui ac congue. Duis<br>
+        <strong>Frontière élagage Nunc porta sed dui ac congue. Duis </strong>
+      </p>
+    </div>
+  </div>
+</div>

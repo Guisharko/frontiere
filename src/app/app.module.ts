@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
 import { CardComponent } from './card/card.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -23,7 +22,6 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     NavComponent,
     CarrouselComponent,
     CardComponent,
-    ContactFormComponent,
     FooterComponent,
     AddContactComponent,
   ],
