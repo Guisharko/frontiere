@@ -13,7 +13,10 @@ export class CardComponent implements OnInit {
   }
   faChevronDown = faChevronDown;
   faChevronUp = faChevronUp;
-  public isCollapsed = true;
+  public isCollapsed1 = true;
+  public isCollapsed2 = true;
+  public isCollapsed3 = true;
+  public isCollapsed4 = true;
 
   ngOnInit() {
     AOS.init({

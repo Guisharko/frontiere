@@ -3,8 +3,8 @@
   <ng-template ngbSlide *ngFor="let imageBackground of imagesBackground">
       <div [class]="imageBackground">
       </div>
-      <div class="carousel-caption d-flex h-100 align-items-top align-items-right">
-          <a class="phone w-100 text-right" href="tel:+33606060606" data-aos-anchor-placement="top-center" data-aos="fade-down" data-aos-delay="50">
+      <div class="carousel-caption d-flex h-100 align-items-top text-xs-center text-lg-right ">
+          <a class="phone w-100" href="tel:+33606060606" data-aos-anchor-placement="top-center" data-aos="fade-down" data-aos-delay="50">
             <fa-icon  [icon]="faPhone"></fa-icon>  06 06 06 06 06
           </a>
       </div>
@@ -17,7 +17,7 @@
           augue mollis interdum
         </p>
       </div>
-      <div class="carousel-caption caroussel_text d-flex h-25 align-items-top justify-content-center">
+      <div class="carousel-caption caroussel_text caroussel_btn d-flex h-25 align-items-top justify-content-center">
         <a href="#contact">
           <button class="btn button_carrousel btn-lg">{{"Devis Gratuit" | uppercase}}</button>
         </a>
