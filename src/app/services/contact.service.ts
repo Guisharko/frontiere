@@ -1,19 +1,19 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Contact} from '../models/contact';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
+import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-
   public collection: Observable<Contact[]>;
   private itemsCollection: AngularFirestoreCollection<Contact>;
 
-
   constructor(
+    private http: HttpClient,
     private afs: AngularFirestore
   ) {
     this.itemsCollection = this.afs.collection<Contact>('contactMessage');
@@ -26,15 +26,14 @@ export class ContactService {
       })
     );
   }
-
   public add(item: Contact): Promise<any> {
     const id = this.afs.createId();
     const date = new Date();
-    const contact = {id, date, ...item};
-    console.log(contact);
+    const contact = {date, ...item};
     return this.itemsCollection.doc(id).set(contact)
       .catch((e) => {
         console.log(e);
       });
   }
+
 }

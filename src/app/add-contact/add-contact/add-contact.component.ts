@@ -9,12 +9,13 @@ import AOS from 'aos';
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
   styleUrls: ['./add-contact.component.scss'],
-  providers: [ ]
+  providers: []
 })
 export class AddContactComponent implements OnInit {
 
   contactForm: FormGroup;
   disabledSubmitButton = true;
+  alreadySubmit = false;
   @Input() initContact = new Contact();
   @Output() submitedForm: EventEmitter<Contact> = new EventEmitter();
 
@@ -23,14 +24,19 @@ export class AddContactComponent implements OnInit {
     if (this.contactForm.valid) {
       this.disabledSubmitButton = false;
     }
+    if (this.alreadySubmit === true) {
+      this.disabledSubmitButton = true;
+    }
   }
-  constructor( private contactService: ContactService, private router: Router, private fb: FormBuilder) { }
+
+  constructor(private contactService: ContactService, private router: Router, private fb: FormBuilder) {
+  }
 
   register() {
     this.submitedForm.emit(this.contactForm.value);
     this.contactService.add(this.contactForm.value);
     this.contactForm.reset();
-
+    this.alreadySubmit = true;
   }
 
   ngOnInit() {
@@ -40,6 +46,7 @@ export class AddContactComponent implements OnInit {
     });
     this.createForm();
   }
+
   createForm() {
     this.contactForm = this.fb.group({
       contactFormName: [this.initContact.nom, Validators.required],
