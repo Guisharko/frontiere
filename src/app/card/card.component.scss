@@ -50,6 +50,14 @@ body {
 .cards{
   background-color: #dec3af;
  }
-.prestations{
-  position: absolute;
+
+.darken{
+  background-color: #a5796d;
+  color: white;
+}
+.content-card {
+  min-height: 50vh;
+}
+.content-text {
+  min-height: 25vh;
 }

@@ -1,91 +1,106 @@
-<div id="cards" class="content cards d-flex h-100 align-items-center justify-content-center">
-  <h2 class="d-flex h-75 align-items-top prestations" data-aos="fade-left" data-aos-delay="200">
+<div id="cards" class="text-center ">
+<div class="content-text" data-aos="fade-left" data-aos-delay="200">
+  <h2>
     Prestations
   </h2>
+</div>
+
+<div class="content-card cards d-flex mh-75 align-items-center justify-content-center">
 
   <div class="row text-center">
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-up"
-         data-aos-delay="200">
-      <div class="card">
+         data-aos-delay="200"  (click)="unCollapsed();isCollapsed1 = !isCollapsed1">
+      <div [ngClass]="(!isCollapsed1)?'darken card':'card'" >
         <img src="assets/images/blk78rif.bmp" alt="">
         <div class="card-body">
           <h3 class="card-title">
             Elagage
           </h3>
-          <div (click)="isCollapsed1 = !isCollapsed1"
-               [attr.aria-expanded]="!isCollapsed1" aria-controls="collapse1">
+          <div>
             <fa-icon *ngIf="isCollapsed1" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
             <fa-icon *ngIf="isCollapsed1 === false" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <p id="collapse1" [ngbCollapse]="isCollapsed1">
-              Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
-              tellus, sed dictum nibh. Aenean lobortis a dolor.
-            </p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-down"
-         data-aos-delay="400">
-      <div class="card">
+         data-aos-delay="400"  (click)="unCollapsed();isCollapsed2 = !isCollapsed2">
+      <div [ngClass]="(!isCollapsed2)?'darken card':'card'">
         <img src="assets/images/b8v5lmhh.bmp" alt="">
         <div class="card-body">
           <h3 class="card-title">
             Rognage
           </h3>
-          <div (click)="isCollapsed2 = !isCollapsed2"
-               [attr.aria-expanded]="!isCollapsed2" aria-controls="collapse2">
+          <div>
             <fa-icon *ngIf="isCollapsed2" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
             <fa-icon *ngIf="isCollapsed2 === false" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <p id="collapse2" [ngbCollapse]="isCollapsed2">
-              Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
-              tellus, sed dictum nibh. Aenean lobortis a dolor.
-            </p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-up"
-         data-aos-delay="600">
-      <div class="card">
-        <img src="assets/images/5yuji9pa.bmp" alt="">
+         data-aos-delay="600" (click)="unCollapsed();isCollapsed3 = !isCollapsed3">
+      <div [ngClass]="(!isCollapsed3)?'darken card':'card'">
+
         <div class="card-body">
+          <img src="assets/images/5yuji9pa.bmp" alt="">
           <h3 class="card-title">
             Fendage
           </h3>
-          <div (click)="isCollapsed3 = !isCollapsed3"
-               [attr.aria-expanded]="!isCollapsed3" aria-controls="collapse3">
+          <div >
             <fa-icon *ngIf="isCollapsed3" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
             <fa-icon *ngIf="isCollapsed3 === false" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <p id="collapse3" [ngbCollapse]="isCollapsed3">
-              Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
-              tellus, sed dictum nibh. Aenean lobortis a dolor.
-            </p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-down"
-         data-aos-delay="800">
-      <div class="card">
+         data-aos-delay="800" (click)="unCollapsed();isCollapsed4 = !isCollapsed4">
+      <div [ngClass]="(!isCollapsed4)?'darken card':'card'">
         <img src="assets/images/4gffk64b.bmp" alt="">
         <div class="card-body">
           <h3 class="card-title">
             Broyage
           </h3>
-          <div (click)="isCollapsed4 = !isCollapsed4"
-               [attr.aria-expanded]="!isCollapsed4" aria-controls="collapse4">
+          <div >
             <fa-icon *ngIf="isCollapsed4" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
             <fa-icon *ngIf="isCollapsed4 === false" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <p id="collapse4" [ngbCollapse]="isCollapsed4">
-              Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
-              tellus, sed dictum nibh. Aenean lobortis a dolor.
-            </p>
+
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="d-flex mh-25 text-center row cards align-items-top content-text" data-aos="fade-left" data-aos-delay="200">
+  <div *ngIf="(!isCollapsed1)" class="col-12">
+    <p>
+      Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
+      tellus, sed dictum nibh. Aenean lobortis a dolor.
+    </p>
+  </div>
+  <div *ngIf="(!isCollapsed2)" class="col-12">
+    <p>
+      Completely synergize premier leadership skills with plug-and-play schemas.
+      Efficiently engage superior vortals.
+    </p>
+  </div>
+  <div *ngIf="(!isCollapsed3)" class="col-12">
+    <p>
+      Energistically whiteboard goal-oriented schemas for wireless metrics.
+      Globally deploy backend ROI via excellent internal.
+    </p>
+  </div>
+  <div *ngIf="(!isCollapsed4)" class="col-12">
+    <p>
+      Proactively architect distinctive architectures for robust leadership.
+      Credibly cultivate installed base supply chains after wireless e-tailers. Phosfluorescently.
+    </p>
+  </div>
+
+</div>
 </div>
