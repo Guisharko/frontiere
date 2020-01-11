@@ -26,7 +26,6 @@ exports.sendEmail = functions.firestore
     const contactFormAdresse = createdData.contactFormAdresse;
     const contactFormMessage = createdData.contactFormMessage;
     const contactFormPhone = createdData.contactFormPhone;
-    const contactDate = createdData.date;
 
     const mailOptions = {
       from: `***********`,
@@ -47,7 +46,6 @@ exports.sendEmail = functions.firestore
                     <p><strong>Email: </strong>${contactFormEmail}</p>
                     <p><strong>Téléphone: </strong>${contactFormPhone}</p>
                     <p><strong>Message: </strong></p><p>${contactFormMessage}</p>
-                    <p><strong>Date de la demande: </strong>${contactDate}</p>
                   </td>
                 </tr>
                </table>
