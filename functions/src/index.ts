@@ -31,7 +31,7 @@ exports.sendEmail = functions.firestore
     const mailOptions = {
       from: `***********`,
       to: gmailEmail,
-      subject: `Nouvelle demande de devis de ${contactFormName}`,
+      subject: 'Une nouvelle demande de devis provenant de votre site web',
       html: `
               <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                 <tr>

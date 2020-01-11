@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "frontiere-elagage"
+    "default": "frontiere-elagage45",
+    "frontiere": "frontiere-elagage45"
   }
 }

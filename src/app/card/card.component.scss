@@ -61,3 +61,22 @@ body {
 .content-text {
   min-height: 25vh;
 }
+.prestations{
+  position: relative;
+  h2{
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.button_carrousel {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.2);
+  color: white;
+  text-shadow: black 1px 1px 5px;
+  border: 2px solid white;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
