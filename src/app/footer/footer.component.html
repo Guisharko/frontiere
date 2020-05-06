@@ -1,3 +1,40 @@
-<div class="footer">
-    <strong>Frontière élagage Nunc porta sed dui ac congue. Duis  </strong>
+<div class="footer text-center">
+  <a class="mention "(click)="openLg(mention)">Mentions légales</a>
 </div>
+<ng-template #mention let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Mentions légales</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+        <p ><strong> </strong><br />
+      Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : <a href="http://frontiere-elagae.fr" target="_blank">frontiere-elagae.fr</a> les informations suivantes :</p>
+
+    <p ><strong>ÉDITEUR</strong></p>
+
+    <p >Le site <a href="http://frontiere-elagae.fr" target="_blank">frontiere-elagae.fr</a> est la propriété exclusive de <strong>  </strong><strong> </strong>, qui l'édite.</p>
+
+    <p ><strong> </strong><strong> </strong><br />
+      <strong>  </strong>au capital de<strong> </strong><strong>  </strong>€Tél  : <strong> </strong></p>
+
+    <p ><strong>  </strong><strong>   </strong><br />
+      Immatriculée au Registre du Commerce et des Sociétés de  <strong>  </strong>sous le numéro<strong> </strong><strong> </strong><strong> </strong></p>
+
+    <p >Numéro TVA intracommunautaire : <strong> </strong><br />
+      Adresse de courrier électronique : <strong>example@example.com</strong> <br />
+      <br />
+      Directeur de la  publication : <strong> </strong><br />
+      Contactez le responsable de la publication : <strong>example@example.com</strong></p>
+
+    <p> </p>
+
+    <p ><strong>HÉBERGEMENT</strong></p>
+
+    <p>Le site est hébergé par <strong>       </strong><br />
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>

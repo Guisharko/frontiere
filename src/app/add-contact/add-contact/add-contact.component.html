@@ -1,56 +1,55 @@
 <div id="contact" class="content d-flex h-100 align-items-center justify-content-center bg-contact">
 
   <div class="row ">
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>
-    <div class="col-md-4 col-xs-10 offset-sm-1 bg-form">
-      <h3 class="contact-text text-center" data-aos="zoom-out-down" data-aos-delay="100">
-        <span class="green">DEVIS GRATUIT</span><br>dolor sit amet, consectetur adipiscing elit.
+    <div class="col-md-5 col-xs-10 offset-sm-1 bg-form">
+      <h3 class="contact-text text-center" data-aos="fade-up" data-aos-delay="200">
+        <span class="green">DEVIS GRATUIT</span><br>Pour tous vos travaux d'élagage, de broyage, d'abattage, de fendage ou de rognage.
       </h3>
       <form [formGroup]="contactForm" (ngSubmit)="register()">
-        <div data-aos="fade-left" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <label for="nom" class="form-required">Nom</label>
           <input class="required form-control" type="text" id="nom" required="required" aria-required="true"
-                 formControlName="contactFormName" >
+                 formControlName="contactFormName">
         </div>
 
 
-        <div data-aos="fade-right" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <label for="adresse">Adresse</label>
-          <input class="form-control" type="text" id="adresse" formControlName="contactFormAdresse" >
+          <input class="form-control" type="text" id="adresse" formControlName="contactFormAdresse">
         </div>
 
 
-        <div data-aos="fade-left" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <label for="email">Email</label>
-          <input class="form-control" type="text" id="email" formControlName="contactFormEmail" >
+          <input class="form-control" type="text" id="email" formControlName="contactFormEmail">
         </div>
 
 
-        <div data-aos="fade-right" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <label for="telephone" class="form-required">Téléphone</label>
           <input class="required form-control" type="text" id="telephone" required="required" aria-required="true"
-                 formControlName="contactFormPhone" >
+                 formControlName="contactFormPhone">
         </div>
 
 
-        <div data-aos="fade-left" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="200">
           <label for="message" class="form-required">Message</label>
           <textarea class="required form-control" id="message" required="required" aria-required="true"
-                    formControlName="contactFormMessage" ></textarea>
+                    formControlName="contactFormMessage"></textarea>
         </div>
 
 
-        <input type="submit" value="Envoyer le message" class="btn button_form btn-lg mt-5 w-100" data-aos="zoom-out-up"
-               data-aos-delay="200" [disabled]="disabledSubmitButton">
+        <input type="submit" value="Envoyer le message" class="btn button_form btn-lg mt-5 w-100"
+               data-aos="fade-up" data-aos-delay="200" [disabled]="disabledSubmitButton">
       </form>
     </div>
 
-    <div class="col-md-3 offset-md-1 col-xs-10 d-flex align-items-center text-center"
-         data-aos="zoom-out-down" data-aos-delay="200">
-      <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugviat magna sed ultricies bibendum.
-        Nunc porta sed dui ac congue. Duis<br>
-        <strong>Frontière élagage Nunc porta sed dui ac congue. Duis </strong>
+    <div class="col-md-3 offset-md-1 col-xs-10 mt-5 d-flex align-items-center text-center">
+      <p>Pour tous vos travaux d'élagage, de broyage, d'abattage, de fendage ou de rognage.<br>
+        Demandez un devis à votre élagueur grimpeur<br>
+        <strong>Frontière élagage</strong>
       </p>
     </div>
   </div>

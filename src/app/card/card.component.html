@@ -1,109 +1,184 @@
-<div id="cards" class="text-center prestations">
-<div class="content-text" data-aos="fade-left" data-aos-delay="200">
-  <h2>
-    Prestations
-  </h2>
-</div>
+<div class="card_component">
+  <div id="cards" class="text-center prestations">
+    <div class="content-text">
+      <h2>
+        Prestations
+      </h2>
+    </div>
 
-<div class="content-card cards d-flex mh-75 align-items-center justify-content-center">
+    <div class="content-card cards d-flex container align-items-center ">
 
-  <div class="row text-center">
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-up"
-         data-aos-delay="200"  (click)="unCollapsed();isCollapsed1 = !isCollapsed1">
-      <div [ngClass]="(!isCollapsed1)?'darken card':'card'" >
-        <img src="assets/images/blk78rif.bmp" alt="">
-        <div class="card-body">
-          <h3 class="card-title">
-            Elagage
-          </h3>
-          <div class="d-none d-md-block">
-            <fa-icon *ngIf="isCollapsed1" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <fa-icon *ngIf="isCollapsed1 === false" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
+      <div class="row text-center justify-content-center">
+        <div class="contain elagage col-lg-4 col-md-6 col-sm-12 mr-5 mb-5 mr-5 mb-5" (click)="openLg(elagage)">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Elagage</p>
+              <div class="description">
+                <p>L’élagage consiste à couper les branches superflues d’un arbre</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contain rognage col-lg-4 col-md-6 col-sm-12 mr-5 mb-5" (click)="openLg(rognage)">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Rognage</p>
+              <div class="description">
+                <p>Après l’abattage d’un arbre, il reste la souche. L’utilisation d’une rogneuse permet d’éliminer les
+                  souches
+                  après
+                  abattage</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contain abattage col-lg-4 col-md-6 col-sm-12 mr-5 mb-5">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Abattage</p>
+              <div class="description">
+                <p>L’élagage consiste à couper les branches superflues d’un arbre</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contain broyage col-lg-4 col-md-6 col-sm-12 mr-5 mb-5" (click)="openLg(broyage)">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Broyage</p>
+              <div class="description">
+                <p>Le broyat issus de votre broyeur pourra être employé pour pailler le sol, ce qui maintient l'humidité
+                  et limite
+                  la propagation des mauvaises herbes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contain fendage col-lg-4 col-md-6 col-sm-12 mr-5 mb-5" (click)="openLg(fendage)">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Fendage</p>
+              <div class="description">
+                <p>Après vos travaux d'élagage ou d'abattage, souvent il vous reste beaucoup de bois</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contain conseil col-lg-4 col-md-6 col-sm-12 mr-5 mb-5">
+          <div class="overlay">
+            <div class="items"></div>
+            <div class="items head">
+              <p>Conseil</p>
+              <div class="description">
+                <p>Spécialisée dans les travaux d'élagage, Frontière Elagage répond à toutes vos demandes arboricoles.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-down"
-         data-aos-delay="400"  (click)="unCollapsed();isCollapsed2 = !isCollapsed2">
-      <div [ngClass]="(!isCollapsed2)?'darken card':'card'">
-        <img src="assets/images/b8v5lmhh.bmp" alt="">
-        <div class="card-body">
-          <h3 class="card-title">
-            Rognage
-          </h3>
-          <div class="d-none d-md-block">
-            <fa-icon *ngIf="isCollapsed2" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <fa-icon *ngIf="isCollapsed2 === false" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
-          </div>
-        </div>
+
+    <div class="d-flex mh-25 text-center row cards align-items-top content-text">
+      <div class="d-flex h-25 align-items-top justify-content-center col-12">
+        <a href="#contact">
+          <button class="btn button_carrousel btn-lg" data-aos="fade-up"
+                  data-aos-delay="200">{{"Demandez votre Devis Gratuit" | uppercase}}</button>
+        </a>
       </div>
     </div>
 
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-up"
-         data-aos-delay="200" (click)="unCollapsed();isCollapsed3 = !isCollapsed3">
-      <div [ngClass]="(!isCollapsed3)?'darken card':'card'">
-        <img src="assets/images/5yuji9pa.bmp" alt="">
-        <div class="card-body">
-          <h3 class="card-title">
-            Fendage
-          </h3>
-          <div class="d-none d-md-block">
-            <fa-icon *ngIf="isCollapsed3" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <fa-icon *ngIf="isCollapsed3 === false" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 d-flex justify-content-center" data-aos="fade-down"
-         data-aos-delay="400" (click)="unCollapsed();isCollapsed4 = !isCollapsed4">
-      <div [ngClass]="(!isCollapsed4)?'darken card':'card'">
-        <img src="assets/images/4gffk64b.bmp" alt="">
-        <div class="card-body">
-          <h3 class="card-title">
-            Broyage
-          </h3>
-          <div class="d-none d-md-block">
-            <fa-icon *ngIf="isCollapsed4" [icon]="faChevronUp" data-aos-delay="200"></fa-icon>
-            <fa-icon *ngIf="isCollapsed4 === false" [icon]="faChevronDown" data-aos-delay="200"></fa-icon>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 
-<div class="d-flex mh-25 text-center row cards align-items-top content-text" data-aos="fade-left" data-aos-delay="200">
-  <div *ngIf="(!isCollapsed1)" class="col-12">
-    <p>
-      Cras scelerisque felis eleifend molestie eleifend. Integer quis mollis nisl. In ut commodo
-      tellus, sed dictum nibh. Aenean lobortis a dolor.
-    </p>
+<ng-template #elagage let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Elagage</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
-  <div *ngIf="(!isCollapsed2)" class="col-12">
-    <p>
-      Completely synergize premier leadership skills with plug-and-play schemas.
-      Efficiently engage superior vortals.
-    </p>
+  <div class="modal-body">
+    <i>L’élagage consiste à couper les branches superflues d’un arbre pour différentes raisons : soit on veut modifier
+      sa forme pour qu'il ait un port esthétique, soit on souhaite alléger sa ramure pour renforcer des branches, ou
+      soit il s'agit de réduire son envergure si des branches dépassent chez le voisin ou risquent de tomber par
+      vents</i>
   </div>
-  <div *ngIf="(!isCollapsed3)" class="col-12">
-    <p>
-      Energistically whiteboard goal-oriented schemas for wireless metrics.
-      Globally deploy backend ROI via excellent internal.
-    </p>
-  </div>
-  <div *ngIf="(!isCollapsed4)" class="col-12">
-    <p>
-      Proactively architect distinctive architectures for robust leadership.
-      Credibly cultivate installed base supply chains after wireless e-tailers. Phosfluorescently.
-    </p>
-  </div>
-  <div class="d-flex h-25 align-items-top justify-content-center col-12">
-    <a href="#contact">
-      <button class="btn button_carrousel btn-lg">{{"Demandez votre Devis Gratuit" | uppercase}}</button>
-    </a>
-  </div>
-</div>
 
-</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>
+<ng-template #rognage let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Rognage</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <i>>Après l’abattage d’un arbre, il reste la souche. L’utilisation d’une rogneuse permet d’éliminer les souches
+      après
+      abattage sans faire une excavation ni laisser un terrain plein d’ornières. Les souches sont généralement
+      inesthétiques et dangereuses avec le risque d’endommager du matériel comme la tondeuse.</i>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>
+<ng-template #fendage let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Fendage</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Après vos travaux d'élagage ou d'abattage, souvent il vous reste beaucoup de bois</p>
+    <p>Frontière Elagage vous proposer de vous fendre votre bois, pour votre système de chauffage</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>
+<ng-template #broyage let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Broyage</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <i>Le broyat issus de votre broyeur pourra être employé pour pailler le sol, ce qui maintient l'humidité et limite
+      la propagation des mauvaises herbes.
+
+      Si vous êtes adapte du compostage, les débris issus du broyeur rejoindront les résidus de tonte pour former un
+      compost comportant un bon rapport de déchets azotés et carbonés </i>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>
+<!--<ng-template #conseil let-modal>-->
+<!--  <div class="modal-header">-->
+<!--    <h4 class="modal-title">Conseil</h4>-->
+<!--    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
+<!--      <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    <i>Le broyat issus de votre broyeur pourra être employé pour pailler le sol, ce qui maintient l'humidité et limite-->
+<!--      la propagation des mauvaises herbes.-->
+
+<!--      Si vous êtes adapte du compostage, les débris issus du broyeur rejoindront les résidus de tonte pour former un-->
+<!--      compost comportant un bon rapport de déchets azotés et carbonés </i>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>-->
+<!--  </div>-->
+<!--</ng-template>-->

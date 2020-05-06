@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import AOS from 'aos';
 import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -9,7 +10,7 @@ import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
     styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-    constructor() {
+    constructor(private modalService: NgbModal) {
     }
 
     faChevronDown = faChevronDown;
@@ -32,4 +33,7 @@ export class CardComponent implements OnInit {
             delay: 1200,
         });
     }
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
+  }
 }

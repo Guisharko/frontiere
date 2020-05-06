@@ -15,6 +15,9 @@ export class CarrouselComponent implements OnInit {
   imagesBackground = [
     'image_cover image1',
     'image_cover image2',
+    'image_cover image4',
+    'image_cover image7',
+    'image_cover image8',
   ];
 
   constructor(config: NgbCarouselConfig) {

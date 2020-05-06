@@ -21,6 +21,24 @@
   width: 100%;
   height: 100vh;
 }
+.image7 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url('../../assets/images/carousel7.jpg');
+  width: 100%;
+  height: 100vh;
+}
+.image4 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url('../../assets/images/carousel4.jpg');
+  width: 100%;
+  height: 100vh;
+}
+.image8 {
+  box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.3);
+  background-image: url('../../assets/images/carousel8.jpg');
+  width: 100%;
+  height: 100vh;
+}
 
 .button_carrousel {
   box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.2);
@@ -30,6 +48,9 @@
   border-radius: 30px;
   font-size: 1.5rem;
   font-weight: bold;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .bond {
@@ -53,7 +74,7 @@
   font-weight: bold;
   text-shadow: black 1px 1px 5px;
   padding-top: 2em;
-
+  cursor: pointer;
 }
 h1{
   color: white;
