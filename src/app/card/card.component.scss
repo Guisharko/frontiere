@@ -21,7 +21,6 @@ body {
   display: -ms-flexbox;
   display: flex;
   word-wrap: break-word;
-  background-image: url("../../assets/images/card.png");
   opacity: 0.8;
   background-clip: border-box;
   box-shadow: 0 0rem 1rem rgba(71, 53, 26, 0.25);
@@ -90,12 +89,6 @@ body {
   font-weight: bold;
   margin:  80px 10px 10px 10px ;
 }
-.card:hover{
-  background-image: url("../../assets/images/card_hover.png");
-}
-
-
-
 $bg: #dec3af;
 
 body {
