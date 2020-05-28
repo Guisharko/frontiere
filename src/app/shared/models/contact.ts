@@ -1,6 +1,4 @@
-import {ContactI} from '../interface/contact-i';
-
-export class Contact implements ContactI {
+export class Contact {
   id: string;
   nom: string;
   adresse: string;

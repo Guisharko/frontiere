@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Contact} from '../models/contact';
+import {Contact} from '../shared/models/contact';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';

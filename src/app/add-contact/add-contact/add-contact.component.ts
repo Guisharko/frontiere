@@ -1,9 +1,9 @@
 import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
-import {Contact} from '../../models/contact';
 import {ContactService} from '../../services/contact.service';
 import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import AOS from 'aos';
+import {Contact} from '../../shared/models/contact';
 
 @Component({
   selector: 'app-add-contact',

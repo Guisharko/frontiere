@@ -1,0 +1,27 @@
+<nav class="navbar navbar-white bg-white">
+  <div class="btn-group">
+    <a class="" [routerLink]="['/dashboard/card', '']" routerLinkActive="router-link-active">
+      <button class="btn btn-secondary btn-lg" type="button">
+        Cartes
+      </button>
+    </a>
+    <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="" [routerLink]="['/dashboard/card', 'add']" routerLinkActive="router-link-active">Ajouter</a>
+      <a class="" [routerLink]="['/dashboard/card', 'edit']" routerLinkActive="router-link-active">Modifier</a>
+      <a class="" [routerLink]="['/dashboard/card', 'list']" routerLinkActive="router-link-active">Toutes les Cartes</a>
+    </div>
+  </div>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['/dashboard/carousel', '']" routerLinkActive="router-link-active">Galerie</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['/dashboard/comment', '']"
+         routerLinkActive="router-link-active">Commentaires</a>
+    </li>
+  </ul>
+</nav>
