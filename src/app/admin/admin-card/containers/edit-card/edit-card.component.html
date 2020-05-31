@@ -1,1 +1,5 @@
 <app-admin-nav></app-admin-nav>
+<ng-container *ngIf="card$ | async as card">
+  <app-form-card [initCard]="card" (submitedForm)="editCard($event)">
+  </app-form-card>
+</ng-container>

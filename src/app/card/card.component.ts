@@ -1,39 +1,33 @@
 import {Component, OnInit} from '@angular/core';
 import AOS from 'aos';
-import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AdminCardService} from '../admin/admin-card/services/admin-card.service';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Card} from '../shared/models/card';
 
 
 @Component({
-    selector: 'app-card',
-    templateUrl: './card.component.html',
-    styleUrls: ['./card.component.scss']
+  selector: 'app-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-    constructor(private modalService: NgbModal) {
-    }
+  collection$: Observable<Card[]>;
+  constructor(private modalService: NgbModal,
+              private adminCardService: AdminCardService,
+              private router: Router) {
+    this.collection$ = this.adminCardService.collection;
+  }
 
-    faChevronDown = faChevronDown;
-    faChevronUp = faChevronUp;
-    public isCollapsed1 = false;
-    public isCollapsed2 = true;
-    public isCollapsed3 = true;
-    public isCollapsed4 = true;
+  ngOnInit() {
+    AOS.init({
+      duration: 2000,
+      delay: 1200,
+    });
+  }
 
-    public unCollapsed() {
-        this.isCollapsed1 = true;
-        this.isCollapsed2 = true;
-        this.isCollapsed3 = true;
-        this.isCollapsed4 = true;
-    }
-
-    ngOnInit() {
-        AOS.init({
-            duration: 2000,
-            delay: 1200,
-        });
-    }
   openLg(content) {
-    this.modalService.open(content, { size: 'lg' });
+    this.modalService.open(content, {size: 'lg'});
   }
 }

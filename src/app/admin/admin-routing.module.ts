@@ -15,9 +15,9 @@ const routes: Routes = [
       import('./admin-carousel/admin-carousel.module').then((m) => m.AdminCarouselModule)
   },
   {
-    path: 'comment',
+    path: 'devis',
     loadChildren: () =>
-      import('./admin-comment/admin-comment.module').then((m) => m.AdminCommentModule)
+      import('./admin-devis/admin-devis.module').then((m) => m.AdminDevisModule)
   }
 ];
 

@@ -6,6 +6,9 @@ import { TableauComponent } from './components/tableau/tableau.component';
 
 @NgModule({
   declarations: [TableauComponent],
+  exports: [
+    TableauComponent
+  ],
   imports: [
     CommonModule
   ]

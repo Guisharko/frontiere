@@ -4,6 +4,7 @@ export class Card {
   descriptionCourte: string;
   descriptionLongue: string;
   image: File;
+  url: string;
 
 
   constructor(fields?: Partial<Card>) {

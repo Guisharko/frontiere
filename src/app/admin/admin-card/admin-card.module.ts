@@ -8,6 +8,7 @@ import {SharedModule} from '../../shared/shared.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AdminCardRoutingModule} from './admin-card-routing.module';
 import {AdminModule} from '../admin.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [FormCardComponent, AddCardComponent, EditCardComponent, ListCardComponent],
@@ -18,7 +19,8 @@ import {AdminModule} from '../admin.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ]
 })
 export class AdminCardModule { }

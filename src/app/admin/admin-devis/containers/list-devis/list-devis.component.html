@@ -1,0 +1,15 @@
+<app-admin-nav></app-admin-nav>
+<div class="container-fluid">
+  <app-tableau
+    [headers]="devisHeaders">
+
+    <tr *ngFor="let devis of collection$ | async">
+      <td> {{ devis.date.seconds*1000 | date: 'dd-MM-yyyy' }} </td>
+      <td> {{ devis.contactFormName}} </td>
+      <td> {{ devis.contactFormAdresse}} </td>
+      <td> {{ devis.contactFormEmail}} </td>
+      <td> {{ devis.contactFormPhone}} </td>
+      <td> {{ devis.contactFormMessage}} </td>
+    </tr>
+  </app-tableau>
+</div>

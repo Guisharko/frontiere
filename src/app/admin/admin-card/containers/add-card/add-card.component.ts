@@ -1,6 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Card} from '../../../../shared/models/card';
 import {AdminCardService} from '../../services/admin-card.service';
 
 @Component({
@@ -14,17 +13,17 @@ export class AddCardComponent implements OnInit {
 
   constructor(
     private cardService: AdminCardService,
-    private router: Router
+    private router: Router,
   ) {
   }
 
   ngOnInit() {
   }
 
-  addCard(event: Card) {
+  addCard(event) {
     this.cardService.add(event).then(() => {
-      this.router.navigate(['/cards', 'list']);
+      console.log(event);
+      this.router.navigate(['/card', 'list']);
     });
   }
-
 }

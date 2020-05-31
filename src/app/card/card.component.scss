@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
 @import '../../stylings/theme';
+body{
+  background-color: $primary;
+}
 .card {
   position: relative;
   margin-bottom: 10px;
   height: 450px;
   max-height: 450px;
-  width: 300px;
+  min-width: 300px;
   max-width: 300px;
   display: -ms-flexbox;
   display: flex;
@@ -81,27 +84,6 @@
 
 body {
   background-color: $primary;
-}
-.elagage{
-  //background: url("../../assets/images/elagage.png");
-  background: url("../../assets/images/carousel4.jpg");
-}
-.rognage{
-  background: url("../../assets/images/rognage.png");
-}
-.abattage {
-  //background: url("../../assets/images/abattage.png");
-  background: url("../../assets/images/carousel1.jpg");
-}
-.broyage{
-  //background: url("../../assets/images/broyage.png");
-  background: url("../../assets/images/carousel6.jpg");
-}
-.fendage{
-  background: url("../../assets/images/fendage.png");
-}
-.conseil{
-  background: url("../../assets/images/conseil.png");
 }
 .contain {
   background-position: 50% 55%;

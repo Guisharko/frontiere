@@ -16,6 +16,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {Router} from '@angular/router';
 import { TemplateComponent } from './template/template.component';
 import {AdminModule} from './admin/admin.module';
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {AdminModule} from './admin/admin.module';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   exports: [
