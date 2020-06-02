@@ -1,15 +1,19 @@
-<nav class="navbar navbar-white bg-white">
-    <a class="" [routerLink]="['/dashboard/card', 'list']" routerLinkActive="router-link-active">
-      <button class="btn btn-secondary btn-lg" type="button">
-        Prestations
-      </button>
-    </a>
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link " [routerLink]="['/dashboard/carousel', 'list']" routerLinkActive="router-link-active">Galerie</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link " [routerLink]="['/dashboard/devis', 'list']" routerLinkActive="router-link-active">Demande de devis</a>
-    </li>
+<header role="banner">
+  <h1>Panneau d'administration</h1>
+  <ul class="utilities">
+    <li class="users"><a href="#">My Account</a></li>
+    <li class="logout warn"><a href="">Log Out</a></li>
+  </ul>
+</header>
+
+
+<nav role="navigation">
+  <ul class="main">
+    <li class="dashboard"><a href="/">Retour au site</a></li>
+    <li class="write"><a [routerLink]="['/dashboard/card', 'list']" routerLinkActive="router-link-active">Prestation</a></li>
+    <li class="edit"><a [routerLink]="['/dashboard/carousel', 'list']" routerLinkActive="router-link-active">Galerie</a></li>
+    <li class="comments"><a [routerLink]="['/dashboard/devis', 'list']" routerLinkActive="router-link-active">Messages <span class="badge badge-light">{{notReadValue}}</span></a></li>
   </ul>
 </nav>
+
+

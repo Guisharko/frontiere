@@ -1,15 +1,24 @@
 <app-admin-nav></app-admin-nav>
-<div class="container-fluid">
+  <main role="main"><section class="panel important"><div class="container">
   <app-tableau
     [headers]="devisHeaders">
 
-    <tr *ngFor="let devis of collection$ | async">
-      <td> {{ devis.date.seconds*1000 | date: 'dd-MM-yyyy' }} </td>
+    <tr *ngFor="let devis of collection$ | async" >
+      <th scope="row"> {{ devis.date.seconds*1000 | date: 'dd-MM-yyyy' }} </th>
       <td> {{ devis.contactFormName}} </td>
       <td> {{ devis.contactFormAdresse}} </td>
       <td> {{ devis.contactFormEmail}} </td>
       <td> {{ devis.contactFormPhone}} </td>
       <td> {{ devis.contactFormMessage}} </td>
+      <td>
+        <select [(ngModel)]="devis.contactFormVue"
+                         (change)="changeStatus(devis , $event)"
+                         class="form-control">
+        <option [value]='true' >Lu </option>
+        <option [value]='false' >Non Lu </option>
+      </select>
+      </td>
     </tr>
   </app-tableau>
 </div>
+</section></main>

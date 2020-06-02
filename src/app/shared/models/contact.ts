@@ -5,6 +5,7 @@ export class Contact {
   phone: string;
   email: string;
   message: string;
+  vue: boolean;
 
   constructor(fields?: Partial<Contact>) {
     if (fields) {

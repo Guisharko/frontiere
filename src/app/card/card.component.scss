@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
 @import '../../stylings/theme';
-body{
-  background-color: $primary;
-}
 .card {
   position: relative;
   margin-bottom: 10px;
@@ -82,7 +79,7 @@ body{
   margin:  80px 10px 10px 10px ;
 }
 
-body {
+.card_component {
   background-color: $primary;
 }
 .contain {

@@ -1,10 +1,10 @@
 <app-admin-nav></app-admin-nav>
-<a class="d-flex justify-content-center mt-5 mb-5" [routerLink]="['/dashboard/card', 'add']" routerLinkActive="router-link-active">
+  <main role="main"><section class="panel important"><a class="d-flex justify-content-center mt-5 mb-5" [routerLink]="['/dashboard/card', 'add']" routerLinkActive="router-link-active">
   <button class="btn btn-success btn-lg" type="button">
     Ajouter une Prestation
   </button>
 </a>
-<div class="container-fluid">
+<div class="container">
   <app-tableau
     [headers]="cardHeaders">
 
@@ -43,3 +43,4 @@
   </app-tableau>
 </div>
 
+</section></main>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {ContactService} from '../../../../services/contact.service';
 import {Contact} from '../../../../shared/models/contact';
@@ -12,18 +12,24 @@ export class ListDevisComponent implements OnInit {
 
   collection$: Observable<Contact[]>;
   devisHeaders =
-    [  'Date',
+    ['Date',
       'Nom',
       'Adresse',
-      'Téléphone',
       'Mail',
-      'Message'];
+      'Téléphone',
+      'Message',
+    'Etat du message'];
 
   constructor(
     private devisService: ContactService,
   ) {
     this.collection$ = this.devisService.collection;
   }
+
   ngOnInit() {
+  }
+
+  changeStatus(contact: Contact, event: any) {
+    this.devisService.updateStatus(contact, event.target.value);
   }
 }

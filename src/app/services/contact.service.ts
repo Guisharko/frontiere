@@ -27,7 +27,8 @@ export class ContactService {
   public add(item: Contact): Promise<any> {
     const id = this.afs.createId();
     const date = new Date();
-    const contact = {date, ...item};
+    const contact = {id, date, ...item};
+    contact.vue = false;
     return this.itemsCollection.doc(id).set(contact)
       .catch((e) => {
         console.log(e);
@@ -38,4 +39,20 @@ export class ContactService {
     return this.itemsCollection.doc<Contact>(id).valueChanges();
   }
 
+  public updateStatus(item: Contact, status): Promise<any> {
+    const contact = {...item};
+    if (status === 'true') {
+      contact.vue = true;
+    } else {
+      contact.vue = false;
+    }
+    console.log(item);
+    return this.update(item.id, contact);
+  }
+
+  public update(id, contact) {
+    return this.itemsCollection.doc(id).update(contact).catch((e) => {
+      console.log(e);
+    });
+  }
 }

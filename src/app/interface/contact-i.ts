@@ -5,4 +5,5 @@ export interface ContactI {
   phone: string;
   email: string;
   message: string;
+  vue: boolean;
 }
