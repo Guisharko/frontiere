@@ -14,7 +14,6 @@ export class AdminCardService {
     private afs: AngularFirestore
   ) {
     this.itemsCollection = this.afs.collection<Card>('card');
-    console.log(this.itemsCollection);
     this.collection = this.itemsCollection.valueChanges().pipe(
       map((tab) => {
         return tab.map((obj) => {

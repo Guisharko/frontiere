@@ -4,7 +4,7 @@ import {TemplateComponent} from './template/template.component';
 
 const routes: Routes = [
   { path: 'dashboard',
-  loadChildren: () =>
+    loadChildren: () =>
     import('./admin/admin.module').then( (m) => m.AdminModule) },
   { path: '', component: TemplateComponent}
   ];

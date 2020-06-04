@@ -4,6 +4,7 @@ import {Contact} from '../../shared/models/contact';
 import {ContactService} from '../../services/contact.service';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import {AuthenticationService} from '../admin-login/services/authentication.service';
 
 @Component({
   selector: 'app-admin-nav',
@@ -17,7 +18,7 @@ export class AdminNavComponent implements OnInit {
   notReadValue = 0;
 
   constructor(
-    private devisService: ContactService,
+    private devisService: ContactService, private authenticationService: AuthenticationService
   ) {
     this.collection$ = this.devisService.collection;
   }
@@ -27,14 +28,15 @@ export class AdminNavComponent implements OnInit {
         contact.forEach(value => {
           if (value.vue !== undefined) {
             if (!value.vue) {
-              console.log(value.vue)
-
               this.notReadValue++;
             }
           }
         });
       }
     );
+  }
+  logout() {
+    this.authenticationService.SignOut();
   }
 
 }

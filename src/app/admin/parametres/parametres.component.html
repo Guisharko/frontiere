@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card card-outline-secondary">
+      <div class="card-header text-center">
+        <h3 class="mb-0">Paramètres du site</h3>
+      </div>
+
+      <form (ngSubmit)="register()" [formGroup]="myForm" class="form">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="nom1"><b>Nom 1</b></label>
+            <input type="text" formControlName="nom1" class="form-control" id="nom1" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nom2"><b>Nom 2</b></label>
+            <input type="text" formControlName="nom2" class="form-control" id="nom2" required>
+          </div>
+
+          <div class="form-group">
+            <label for="slogan"><b>Slogan</b></label>
+            <input type="text" formControlName="slogan" class="form-control" id="slogan" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone"><b>Téléphone</b></label>
+            <input type="text" formControlName="phone" class="form-control" id="phone" required>
+          </div>
+
+          <div class="form-group">
+            <label for="facebook"><b>Facebook</b></label>
+            <input type="text" formControlName="facebook" class="form-control" id="facebook">
+          </div>
+        </div>
+
+        <div class="card-footer text-muted text-center">
+          <button class="btn btn-success btn-lg " type="submit" [disabled]="myForm.invalid">Valider</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

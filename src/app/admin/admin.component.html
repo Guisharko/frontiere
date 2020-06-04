@@ -1,1 +1,28 @@
 <app-admin-nav></app-admin-nav>
+<!--<main role="main">-->
+<!--  <section class="panel important">-->
+<!--  <div class="container-fluid">-->
+<!--    <div *ngFor="let parametres of collection$ | async">-->
+<!--      <div class="card-header text-center">-->
+<!--        <h5>Paramètres du site</h5>-->
+<!--      </div>-->
+<!--      <div class="card-body">-->
+<!--        <p><b>Nom 1: </b>{{ parametres.nom1}} </p>-->
+<!--        <p><b>Nom 2: </b>{{ parametres.nom2}} </p>-->
+<!--        <p><b>Téléphone: </b>{{ parametres.phone}} </p>-->
+<!--        <p><b>Slogan: </b>{{ parametres.slogan}} </p>-->
+<!--        <p><b>Facebook: </b>{{ parametres.facebook}} </p>-->
+<!--      </div>-->
+<!--      <div class="card-footer text-muted">-->
+<!--        <button type="button" class="btn btn-secondary"(click)="edit(parametres)">Modifier</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+<!--</main>-->
+<main role="main"><section class="panel important"><ng-container *ngIf="parametres$ | async as parametres">
+
+<app-parametres [initParametres]="parametres" (submitedForm)="editParametres($event)">
+</app-parametres>
+</ng-container>
+</section></main>
