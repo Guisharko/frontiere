@@ -27,6 +27,7 @@ export class ParametresComponent implements OnInit {
       slogan: [this.initParametres.slogan, Validators.required],
       phone: [this.initParametres.phone, Validators.required],
       facebook: [this.initParametres.facebook],
+      youtube: [this.initParametres.youtube],
     });
   }
 

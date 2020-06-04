@@ -5,6 +5,7 @@ export class Parametres {
   phone: string;
   slogan: string;
   facebook: string;
+  youtube: string;
 
   constructor(fields?: Partial<Parametres>) {
     if (fields) {
