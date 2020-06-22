@@ -1,6 +1,19 @@
+@import '../../stylings/theme';
+
 .footer{
-  background-color: #d0bc9b;
+  background-color: $secondary;
 }
 .mention{
   cursor: pointer;
+  color: $primary;
+}
+a{
+  color: $primary;
+}
+
+a:not([href]):not([tabindex]) {
+  color: $primary;
+  :hover {
+    text-decoration: underline;
+  }
 }

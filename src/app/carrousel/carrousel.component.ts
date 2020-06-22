@@ -4,8 +4,8 @@ import {faChevronDown, faMobileAlt} from '@fortawesome/free-solid-svg-icons';
 import AOS from 'aos';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
-import {Parametres} from '../shared/models/parametres';
-import {ParametresService} from '../admin/services/parametres.service';
+import {Carousel} from '../shared/models/carousel';
+import {AdminCarouselService} from '../admin/admin-carousel/services/admin-carousel.service';
 
 
 @Component({
@@ -14,20 +14,11 @@ import {ParametresService} from '../admin/services/parametres.service';
   styleUrls: ['./carrousel.component.scss']
 })
 export class CarrouselComponent implements OnInit {
-  faChevronDown = faChevronDown;
-  faPhone = faMobileAlt;
-  imagesBackground = [
-    'image_cover image1',
-    'image_cover image2',
-    'image_cover image4',
-    'image_cover image7',
-    'image_cover image8',
-  ];
-  collection$: Observable<Parametres[]>;
+  collection$: Observable<Carousel[]>;
 
   constructor(config: NgbCarouselConfig,
-              private parametresService: ParametresService) {
-    this.collection$ = this.parametresService.collection;
+              private carouselService: AdminCarouselService) {
+    this.collection$ = this.carouselService.collection;
     config.showNavigationIndicators = false;
   }
 

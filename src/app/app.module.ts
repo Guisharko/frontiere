@@ -18,6 +18,8 @@ import { TemplateComponent } from './template/template.component';
 import {AdminModule} from './admin/admin.module';
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import {SharedModule} from './shared/shared.module';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,23 +29,26 @@ import {JwtHelperService} from '@auth0/angular-jwt';
     FooterComponent,
     AddContactComponent,
     TemplateComponent,
+    HeaderComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule,
-    FontAwesomeModule,
-    AdminModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireStorageModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        FontAwesomeModule,
+        AdminModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireStorageModule,
+        SharedModule
+    ],
   providers: [],
   exports: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    HeaderComponent,
   ],
   bootstrap: [AppComponent]
 })
@@ -53,6 +58,6 @@ export class AppModule {
     // Use a custom replacer to display function names in the route configs
     const replacer = (key, value) => (typeof value === 'function') ? value.name : value;
 
-    console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
+    // console.log('Routes: ', JSON.stringify(router.config, replacer, 2));
   }
 }

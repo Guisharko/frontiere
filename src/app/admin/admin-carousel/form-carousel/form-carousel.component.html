@@ -1,1 +1,24 @@
-  <main role="main"><section class="panel important"></section></main>
+<main role="main"><section class="panel important"><div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card card-outline-secondary">
+      <div class="card-header">
+        <h3 class="mb-0">Ajouter une Image</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="register()" [formGroup]="myForm" class="form">
+
+          <div class="form-group">
+            <label for="image">Image</label>
+            <input class="form-control" type="file" formControlName="image" id="image" accept=".jpeg,.jpg,.png,.svg" (change)="onFileSelected($event)"/>
+          </div>
+          <p *ngIf="!fbv">Taille maximale de l'image 1500px * 900px</p>
+          <p *ngIf="!fbv">Veuillez attendre le chargement le l'image avant de valider le formulaire</p>
+          <img *ngIf="fbv" src="{{fbv}}" alt="uploaded_file">
+
+          <button class="btn btn-success btn-lg " type="submit" [disabled]="myForm.invalid">Valider</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</section></main>

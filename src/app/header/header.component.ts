@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   faChevronDown = faChevronDown;
   faPhone = faMobileAlt;
   collection$: Observable<Parametres[]>;
+  desktop = false;
 
   constructor(config: NgbCarouselConfig,
               private parametresService: ParametresService) {
@@ -24,6 +25,9 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (window.screen.width >= 768) { // 768px portrait
+      this.desktop = true;
+    }
     AOS.init({
       duration: 2000,
       delay: 1200,

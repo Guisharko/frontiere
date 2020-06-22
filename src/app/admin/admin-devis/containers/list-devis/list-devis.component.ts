@@ -29,7 +29,7 @@ export class ListDevisComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeStatus(contact: Contact, event: any) {
-    this.devisService.updateStatus(contact, event.target.value);
+  read(contact: Contact) {
+    this.devisService.updateStatus(contact, true);
   }
 }

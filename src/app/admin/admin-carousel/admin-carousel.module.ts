@@ -6,6 +6,9 @@ import { EditCarouselComponent } from './containers/edit-carousel/edit-carousel.
 import { ListCarouselComponent } from './containers/list-carousel/list-carousel.component';
 import {AdminCarouselRoutingModule} from './admin-carousel-routing.module';
 import {AdminModule} from '../admin.module';
+import {SharedModule} from '../../shared/shared.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 
 
@@ -14,7 +17,11 @@ import {AdminModule} from '../admin.module';
   imports: [
     CommonModule,
     AdminCarouselRoutingModule,
-    AdminModule
+    AdminModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AdminCarouselModule { }

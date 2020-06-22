@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {AdminCarouselService} from '../../services/admin-carousel.service';
 
 @Component({
   selector: 'app-add-carousel',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCarouselComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private carouselService: AdminCarouselService,
+    private router: Router,
+  ) {
+  }
 
   ngOnInit() {
+  }
+
+  addCarousel(event) {
+    this.carouselService.add(event).then(() => {
+      console.log(event);
+      this.router.navigate(['/carousel', 'list']);
+    });
   }
 
 }

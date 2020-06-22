@@ -1,2 +1,6 @@
 <app-admin-nav></app-admin-nav>
-  <section class="panel important"></section></main>
+<main role="main"><section class="panel important"><ng-container *ngIf="carousel$ | async as carousel">
+  <app-form-carousel [initCarousel]="carousel" (submitedForm)="editCarousel($event)">
+  </app-form-carousel>
+</ng-container>
+</section></main>

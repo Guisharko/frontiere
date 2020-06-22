@@ -39,8 +39,10 @@
           <textarea class="required form-control" id="message" required="required" aria-required="true"
                     formControlName="contactFormMessage"></textarea>
         </div>
-        <input type="submit" value="Envoyer le message" class="btn button_form btn-lg mt-5 w-100"
+        <input type="submit" value="Envoyer le message *" class="btn button_form btn-lg mt-5 w-100"
                data-aos="fade-up" data-aos-delay="200" [disabled]="disabledSubmitButton">
+        <p class="text-center mt-2 mention">*En soumettant ce formulaire vous acceptez les mentions indiquées <u><a class="mention "(click)="openLg(cnil)">ici</a></u></p>
+
       </form>
     </div>
 
@@ -52,3 +54,27 @@
     </div>
   </div>
 </div>
+<ng-template #cnil let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Données à caractère personnel</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Les informations recueillies dans le questionnaire sont enregistrées dans un fichier informatisé par frontiere-elagage.fr.
+    </p>
+    <p>Les données collectées seront communiquées aux seuls destinataires suivants : frontiere-elagage.fr.
+    </p>
+    <p>Vous pouvez accéder aux données vous concernant, les rectifier, demander leur effacement ou exercer votre droit à la limitation du traitement de vos données. Vous pouvez retirer à tout moment votre consentement au traitement de vos données.
+    </p>
+    <p>Consultez le site cnil.fr pour plus d’informations sur vos droits.
+    </p>
+    <p>Pour exercer ces droits ou pour toute question sur le traitement de vos données dans ce dispositif, vous pouvez contacter : frontiere-elagage@gmail.com.
+    </p>
+    <p>Si vous estimez, après nous avoir contactés, que vos droits « Informatique et Libertés » ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>

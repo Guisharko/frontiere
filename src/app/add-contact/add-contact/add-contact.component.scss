@@ -1,15 +1,17 @@
+@import '../../../stylings/theme';
+
 .contact-text{
   margin-top: auto;
   margin-bottom: auto;
 }
 .bg-contact{
-  background-color: #a5796d;
+  background-color: $primary;
   width: 100%;
-  color: white;
+  color: darken($secondary,10%);
   padding: 10px;
 }
 .button_form{
-  color: white;
+  color: darken($secondary,10%);
   border: 2px solid white;
   border-radius: 30px;
   font-size: 1em;

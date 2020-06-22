@@ -1,5 +1,6 @@
-<div class="footer text-center">
-  <a class="mention "(click)="openLg(mention)">Mentions légales</a>
+<div class="footer row">
+  <a class="mention col-6 text-right" href="https://www.facebook.com" title="Suivre sur Facebook" target="_blank">Facebook</a>
+  <a class="mention col-6"(click)="openLg(mention)">Mentions légales</a>
 </div>
 <ng-template #mention let-modal>
   <div class="modal-header">
@@ -14,7 +15,7 @@
 
     <p ><strong>ÉDITEUR</strong></p>
 
-    <p >Le site <a href="http://frontiere-elagae.fr" target="_blank">frontiere-elagae.fr</a> est la propriété exclusive de <strong>  </strong><strong> </strong>, qui l'édite.</p>
+    <p >Le site <a href="http://frontiere-elagage.fr" target="_blank">frontiere-elagage.fr</a> est la propriété exclusive de <strong>  </strong><strong> </strong>, qui l'édite.</p>
 
     <p ><strong> </strong><strong> </strong><br />
       <strong>  </strong>au capital de<strong> </strong><strong>  </strong>€Tél  : <strong> </strong></p>

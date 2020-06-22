@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import AOS from 'aos';
 import {Contact} from '../../shared/models/contact';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-add-contact',
@@ -29,7 +30,7 @@ export class AddContactComponent implements OnInit {
     }
   }
 
-  constructor(private contactService: ContactService, private router: Router, private fb: FormBuilder) {
+  constructor(private contactService: ContactService, private router: Router, private fb: FormBuilder, private modalService: NgbModal) {
   }
 
   register() {
@@ -55,5 +56,8 @@ export class AddContactComponent implements OnInit {
       contactFormEmail: [this.initContact.email, Validators.compose([Validators.required, Validators.email])],
       contactFormMessage: [this.initContact.message, Validators.required],
     });
+  }
+  openLg(content) {
+    this.modalService.open(content, { size: 'lg' });
   }
 }

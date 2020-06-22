@@ -1,26 +1,19 @@
 <div class="header" *ngFor="let parametres of collection$ | async">
-  <div style="position: fixed; z-index: -99; width: 100%; height: 100%">
-    <iframe frameborder="0" height="100%" width="100%"
-            src="https://www.youtube.com/embed/Lim8TVQHf2k?autoplay=1&mute=1&loop">
-    </iframe>
+<!--  <div *ngIf="desktop" style="position: fixed; z-index: -99; width: 100%; height: 100%">-->
+<!--    <iframe frameborder="0" height="100%" width="100%"-->
+<!--            src="https://www.youtube.com/embed/kt2D7xl06mk?version=3&loop=1&autoplay=1&mute=1&showinfo=0&controls=0&autohide=1&playlist=kt2D7xl06mk">-->
+<!--    </iframe>-->
+<!--  </div>-->
+  <div style="background: url('../../assets/images/carousel1.jpg');width: 100%;height: 100vh;box-shadow: inset 0 0 0 100vw rgba(0, 0, 0, 0.2);">
   </div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="carousel-caption d-flex h-100 text-left col-md-3">
-        <a class="phone w-100" href="{{parametres.facebook}}" data-aos-anchor-placement="top-center"
-           data-aos="fade-down" data-aos-delay="50">
-          <i class="fa fa-facebook" aria-hidden="true"></i> Suivre sur Facebook
-        </a>
-      </div>
-      <div class="carousel-caption d-flex h-100 text-right offset-lg-6 col-md-3">
+      <div class="carousel-caption d-flex h-100 align-items-top text-xs-center text-lg-right ">
         <a class="phone w-100" href="tel:+33{{parametres.phone | trim }}" data-aos-anchor-placement="top-center"
            data-aos="fade-down" data-aos-delay="50">
           <fa-icon [icon]="faPhone"></fa-icon>
           {{parametres.phone}}
         </a>
       </div>
-    </div>
 
     <div class="carousel-caption d-flex h-75 align-items-top justify-content-center" data-aos="fade-up"
          data-aos-delay="50">
@@ -37,10 +30,9 @@
         <button class="btn button_carrousel btn-lg">{{"Devis Gratuit" | uppercase}}</button>
       </a>
     </div>
-    <div class="carousel-caption caroussel_text d-flex h-5 align-items-center justify-content-center">
+    <div *ngIf="desktop" class="carousel-caption caroussel_text d-flex h-5 align-items-center justify-content-center">
       <a class="bond" href="#cards" data-aos-anchor-placement="top-center" data-aos-duration="3000">
         <fa-icon [icon]="faChevronDown"></fa-icon>
       </a>
     </div>
-  </div>
 </div>
