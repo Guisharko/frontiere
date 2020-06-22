@@ -1,0 +1,6 @@
+<app-admin-nav></app-admin-nav>
+  <main role="main"><section class="panel important"><ng-container *ngIf="card$ | async as card">
+  <app-form-card [initCard]="card" (submitedForm)="editCard($event)">
+  </app-form-card>
+</ng-container>
+</section></main>

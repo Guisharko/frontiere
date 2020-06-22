@@ -1,0 +1,26 @@
+<app-admin-nav></app-admin-nav>
+<main role="main">
+  <section class="panel important">
+    <div class="container-fluid">
+      <div *ngFor="let devis of collection$ | async" [ngClass]="{'card mb-4 notread' : devis.vue === false,'card mb-4': devis.vue !== false}">
+        <div class="card-header text-center">
+          <h5> {{ devis.contactFormName}} </h5><p><b>{{ devis.date.seconds * 1000 | date: 'dd-MM-yyyy' }}</b> </p>
+        </div>
+        <div class="card-body">
+          <p><b>Téléphone: </b>{{ devis.contactFormPhone}} </p>
+          <p><b>Adresse: </b>{{ devis.contactFormAdresse}} </p>
+          <p><b>Mail: </b>{{ devis.contactFormEmail}} </p>
+          <p> {{ devis.contactFormMessage}} </p>
+        </div>
+        <div class="card-footer text-muted">
+          <select [(ngModel)]="devis.contactFormVue"
+                  (change)="changeStatus(devis , $event)"
+                  class="form-control">
+            <option [value]='true'>Lu</option>
+            <option [value]='false'>Non Lu</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

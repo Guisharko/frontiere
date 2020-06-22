@@ -1,6 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import AOS from 'aos';
-import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {AdminCardService} from '../admin/admin-card/services/admin-card.service';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Card} from '../shared/models/card';
 
 
 @Component({
@@ -9,16 +13,21 @@ import {faChevronDown, faChevronUp} from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  constructor() {
+  collection$: Observable<Card[]>;
+  constructor(private modalService: NgbModal,
+              private adminCardService: AdminCardService,
+              private router: Router) {
+    this.collection$ = this.adminCardService.collection;
   }
-  faChevronDown = faChevronDown;
-  faChevronUp = faChevronUp;
-  public isCollapsed = true;
 
   ngOnInit() {
     AOS.init({
       duration: 2000,
       delay: 1200,
     });
+  }
+
+  openLg(content) {
+    this.modalService.open(content, {size: 'lg'});
   }
 }

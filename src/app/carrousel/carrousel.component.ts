@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
-import { faChevronDown, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {NgbCarouselConfig, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {faChevronDown, faMobileAlt} from '@fortawesome/free-solid-svg-icons';
 import AOS from 'aos';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
+import {Carousel} from '../shared/models/carousel';
+import {AdminCarouselService} from '../admin/admin-carousel/services/admin-carousel.service';
 
 
 @Component({
@@ -10,17 +14,14 @@ import AOS from 'aos';
   styleUrls: ['./carrousel.component.scss']
 })
 export class CarrouselComponent implements OnInit {
-  faChevronDown = faChevronDown;
-  faPhone = faMobileAlt;
-  imagesBackground = [
-    'image_cover image1',
-    'image_cover image2',
-  ];
+  collection$: Observable<Carousel[]>;
 
-  constructor(config: NgbCarouselConfig) {
-    // customize default values of carousels used by this component tree
+  constructor(config: NgbCarouselConfig,
+              private carouselService: AdminCarouselService) {
+    this.collection$ = this.carouselService.collection;
     config.showNavigationIndicators = false;
   }
+
   ngOnInit() {
     AOS.init({
       duration: 2000,

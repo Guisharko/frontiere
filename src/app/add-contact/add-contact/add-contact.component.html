@@ -1,0 +1,80 @@
+<div id="contact" class="content d-flex h-100 align-items-center justify-content-center bg-contact">
+
+  <div class="row ">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5 col-xs-10 offset-sm-1 bg-form">
+      <h3 class="contact-text text-center" data-aos="fade-up" data-aos-delay="200">
+        <span class="green">DEVIS GRATUIT</span><br>Pour tous vos travaux d'élagage, de broyage, d'abattage, de fendage ou de rognage.
+      </h3>
+      <form [formGroup]="contactForm" (ngSubmit)="register()">
+        <div data-aos="fade-up" data-aos-delay="200">
+          <label for="nom" class="form-required">Nom</label>
+          <input class="required form-control" type="text" id="nom" required="required" aria-required="true"
+                 formControlName="contactFormName">
+        </div>
+
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <label for="adresse">Adresse</label>
+          <input class="form-control" type="text" id="adresse" formControlName="contactFormAdresse">
+        </div>
+
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <label for="email">Email</label>
+          <input class="form-control" type="text" id="email" formControlName="contactFormEmail">
+        </div>
+
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <label for="telephone" class="form-required">Téléphone</label>
+          <input class="required form-control" type="text" id="telephone" required="required" aria-required="true"
+                 formControlName="contactFormPhone">
+        </div>
+
+
+        <div data-aos="fade-up" data-aos-delay="200">
+          <label for="message" class="form-required">Message</label>
+          <textarea class="required form-control" id="message" required="required" aria-required="true"
+                    formControlName="contactFormMessage"></textarea>
+        </div>
+        <input type="submit" value="Envoyer le message *" class="btn button_form btn-lg mt-5 w-100"
+               data-aos="fade-up" data-aos-delay="200" [disabled]="disabledSubmitButton">
+        <p class="text-center mt-2 mention">*En soumettant ce formulaire vous acceptez les mentions indiquées <u><a class="mention "(click)="openLg(cnil)">ici</a></u></p>
+
+      </form>
+    </div>
+
+    <div class="col-md-3 offset-md-1 col-xs-10 mt-5 d-flex align-items-center text-center">
+      <p>Pour tous vos travaux d'élagage, de broyage, d'abattage, de fendage ou de rognage.<br>
+        Demandez un devis à votre élagueur grimpeur<br>
+        <strong>Frontière élagage</strong>
+      </p>
+    </div>
+  </div>
+</div>
+<ng-template #cnil let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Données à caractère personnel</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Les informations recueillies dans le questionnaire sont enregistrées dans un fichier informatisé par frontiere-elagage.fr.
+    </p>
+    <p>Les données collectées seront communiquées aux seuls destinataires suivants : frontiere-elagage.fr.
+    </p>
+    <p>Vous pouvez accéder aux données vous concernant, les rectifier, demander leur effacement ou exercer votre droit à la limitation du traitement de vos données. Vous pouvez retirer à tout moment votre consentement au traitement de vos données.
+    </p>
+    <p>Consultez le site cnil.fr pour plus d’informations sur vos droits.
+    </p>
+    <p>Pour exercer ces droits ou pour toute question sur le traitement de vos données dans ce dispositif, vous pouvez contacter : frontiere-elagage@gmail.com.
+    </p>
+    <p>Si vous estimez, après nous avoir contactés, que vos droits « Informatique et Libertés » ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL.
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Fermer</button>
+  </div>
+</ng-template>

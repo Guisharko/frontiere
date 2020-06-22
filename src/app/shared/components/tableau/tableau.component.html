@@ -1,0 +1,15 @@
+<section class="panel ">
+<table class="table table-striped">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col"
+        *ngFor="let header of headers">
+      {{ header }}
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-content></ng-content>
+  </tbody>
+</table>
+</section>

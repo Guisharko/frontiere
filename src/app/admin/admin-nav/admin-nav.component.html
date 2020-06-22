@@ -1,0 +1,18 @@
+<header role="banner">
+  <a href="/dashboard"><h1>Panneau d'administration</h1></a>
+  <ul class="utilities">
+    <li class="logout warn"><a (click)="logout()">Déconnexion</a></li>
+  </ul>
+</header>
+
+
+<nav role="navigation">
+  <ul class="main">
+    <li class="dashboard"><a href="/">Retour au site</a></li>
+    <li class="write"><a [routerLink]="['/dashboard/card', 'list']" routerLinkActive="router-link-active">Prestation</a></li>
+    <li class="edit"><a [routerLink]="['/dashboard/carousel', 'list']" routerLinkActive="router-link-active">Galerie</a></li>
+    <li class="comments"><a [routerLink]="['/dashboard/devis', 'list']" routerLinkActive="router-link-active">Messages <span class="badge badge-light">{{notReadValue}}</span></a></li>
+  </ul>
+</nav>
+
+
